@@ -33,4 +33,20 @@ form.addEventListener("submit", (e) => {
   render();
 });
 
+const themeToggle = document.getElementById("theme-toggle");
+
+function applyTheme(theme) {
+  const dark = theme === "dark";
+  document.body.classList.toggle("dark", dark);
+  themeToggle.textContent = dark ? "Light mode" : "Dark mode";
+  themeToggle.setAttribute("aria-pressed", String(dark));
+}
+
+themeToggle.addEventListener("click", () => {
+  const theme = document.body.classList.contains("dark") ? "light" : "dark";
+  localStorage.setItem("theme", theme);
+  applyTheme(theme);
+});
+
+applyTheme(localStorage.getItem("theme") || "light");
 render();
