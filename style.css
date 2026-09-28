@@ -13,6 +13,8 @@
   --icon: #71717a;
   --danger-bg: #fee2e2;
   --danger-text: #be123c;
+  --accent-bg: #18181b;
+  --accent-text: #fff;
 }
 
 body.dark {
@@ -26,6 +28,8 @@ body.dark {
   --icon: #a1a1aa;
   --danger-bg: #4c0519;
   --danger-text: #fda4af;
+  --accent-bg: #f4f4f5;
+  --accent-text: #18181b;
 }
 
 body {
@@ -92,6 +96,45 @@ button:hover {
   padding: 6px 12px;
   font-size: 0.875rem;
 }
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+#task-count {
+  margin: 0;
+  font-size: 0.875rem;
+  color: var(--icon);
+}
+
+.filters {
+  display: flex;
+  gap: 4px;
+}
+
+button.filter {
+  padding: 6px 10px;
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--border);
+  font-size: 0.875rem;
+}
+
+button.filter:hover {
+  background: var(--bg);
+}
+
+button.filter.is-active,
+button.filter.is-active:hover {
+  background: var(--accent-bg);
+  color: var(--accent-text);
+  border-color: var(--accent-bg);
+}
+
 
 #task-list {
   list-style: none;

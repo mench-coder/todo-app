@@ -16,6 +16,14 @@
       <input id="task-input" type="text" placeholder="What needs doing?" autocomplete="off" />
       <button type="submit">Add</button>
     </form>
+    <div class="toolbar">
+      <p id="task-count">0 tasks left</p>
+      <div class="filters" role="group" aria-label="Filter tasks">
+        <button type="button" class="filter is-active" data-filter="all" aria-pressed="true">All</button>
+        <button type="button" class="filter" data-filter="active" aria-pressed="false">Active</button>
+        <button type="button" class="filter" data-filter="done" aria-pressed="false">Done</button>
+      </div>
+    </div>
     <ul id="task-list"></ul>
     <button type="button" id="clear-completed">Clear completed</button>
   </main>
