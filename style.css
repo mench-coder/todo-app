@@ -10,6 +10,9 @@
   --divider: #e4e4e7;
   --muted: #a1a1aa;
   --input-bg: #fff;
+  --icon: #71717a;
+  --danger-bg: #fee2e2;
+  --danger-text: #be123c;
 }
 
 body.dark {
@@ -20,6 +23,9 @@ body.dark {
   --divider: #3f3f46;
   --muted: #71717a;
   --input-bg: #3f3f46;
+  --icon: #a1a1aa;
+  --danger-bg: #4c0519;
+  --danger-text: #fda4af;
 }
 
 body {
@@ -94,12 +100,48 @@ button:hover {
 }
 
 #task-list li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
   padding: 10px 12px;
   border-bottom: 1px solid var(--divider);
   cursor: pointer;
 }
 
-#task-list li.done {
+.task-text {
+  flex: 1;
+}
+
+#task-list li.done .task-text {
   text-decoration: line-through;
   color: var(--muted);
+}
+
+button.delete {
+  flex: none;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--icon);
+  font-size: 1.25rem;
+  line-height: 1;
+}
+
+button.delete:hover,
+button.delete:focus-visible {
+  background: var(--danger-bg);
+  color: var(--danger-text);
+}
+
+#clear-completed {
+  margin-top: 16px;
+  background: var(--card);
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+#clear-completed:hover {
+  background: var(--bg);
 }
